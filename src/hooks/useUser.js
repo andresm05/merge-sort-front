@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { MergeApi } from '../api/MergeApi';
-import { mergeSort } from '../utils/mergeSort';
 
 export const useUser = () => {
     const [users, setUsers] = useState([]);
@@ -10,7 +9,7 @@ export const useUser = () => {
     const getUsers = async () => {
       try {
         const { data } = await MergeApi.get("/users");
-        setUsers(mergeSort(data.users));
+        setUsers(data.sortUsers)
       } catch (error) {
         setError(error);
         console.log(error);
