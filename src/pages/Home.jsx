@@ -12,6 +12,7 @@ export const Home = () => {
 
   useEffect(() => {
     getUsers();
+    console.log(user);
   }, []);
 
   useEffect(() => {
