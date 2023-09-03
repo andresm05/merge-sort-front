@@ -5,11 +5,13 @@ export const useUser = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [hasUsers, setHasUsers] = useState(true);
 
   const getUsers = async () => {
     try {
       const { data } = await MergeApi.get("/users");
       setUsers(data.sortUsers);
+      setHasUsers(true);
     } catch (error) {
       setError(error);
       console.log(error);
@@ -28,6 +30,11 @@ export const useUser = () => {
         },
       });
       setUsers(data.results);
+      if(data.results.length === 0){
+        setHasUsers(false);
+      }else{
+        setHasUsers(true);
+      }
       console.log(data.results);
     } catch (error) {
       setError(error);
@@ -45,6 +52,7 @@ export const useUser = () => {
     getUsers,
     searchUsers,
     loading,
+    hasUsers,
     error,
   };
 };

@@ -9,7 +9,7 @@ import { UserCard } from "../components/UserCard";
 import { SearchBar } from "../components/SearchBar";
 
 export const Home = () => {
-  const { users, getUsers, searchUsers, loading, error } = useUser();
+  const { users, getUsers, searchUsers, loading, error, hasUsers } = useUser();
   const { user } = useAuthStore();
 
   useEffect(() => {
@@ -41,7 +41,13 @@ export const Home = () => {
   return (
     <div className="container-fluid">
       <Navbar />
-      <SearchBar searchUsers={searchUsers} getUsers={getUsers}/>
+      <SearchBar searchUsers={searchUsers} getUsers={getUsers} />
+      <div
+        className={`alert alert-danger text-center ${hasUsers ? "d-none" : ""}`}
+        role="alert"
+      >
+        No se encontraron usuarios
+      </div>
       <div className="row row-cols-sm-1 row-cols-md-4 mt-3">
         {users.map((u) => (
           <UserCard u={u} key={u._id} />

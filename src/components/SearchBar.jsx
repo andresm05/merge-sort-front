@@ -3,30 +3,25 @@
 import { useLocation, useNavigate } from "react-router-dom";
 // import { useForm } from "../hooks/useForm";
 import queryString from "query-string";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export const SearchBar = ({searchUsers, getUsers}) => {
-  const [searchText, setSearchText] = useState('');
+export const SearchBar = ({ searchUsers, getUsers }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { term = '' } = queryString.parse(location.search);
-
-//   const { searchTex, onInputChange } = useForm({ searchTex: term });
+  const { term = "" } = queryString.parse(location.search);
 
   useEffect(() => {
     if (term.trim().length > 0) {
-        searchUsers(term);
+      searchUsers(term);
+    } else {
+      getUsers();
     }
-    if(searchText.trim().length == 0){
-        getUsers();
-    }
-    }, [term, searchText]);
+  }, [term]);
 
-    const onSearch = (e) => {
-        setSearchText(e.target.value);
-        navigate(`?term=${e.target.value}`);
-    }
+  const onSearch = (e) => {
+    navigate(`?term=${e.target.value}`);
+  };
   return (
     <form className="form-floating mb-3 d-inline-flex">
       <input
