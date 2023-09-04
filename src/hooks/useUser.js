@@ -35,7 +35,6 @@ export const useUser = () => {
       }else{
         setHasUsers(true);
       }
-      console.log(data.results);
     } catch (error) {
       setError(error);
       console.log(error);
