@@ -42,7 +42,7 @@ export const Login = () => {
           <div className="col-sm-6 col-md-6 text-center text-white d-flex flex-column justify-content-center">
             <h5 className="text-muted m-1"><strong>Conoce a tus compañeros de clase</strong></h5>
             <span className="text-muted">Iniciar sesion</span>
-            <div className="d-flex justify-content-center mt-3">
+            <div className="d-flex justify-content-center mt-3 mb-3">
               <GoogleLogin onSuccess={handleLogin} onError={handleLoginError} />
             </div>
           </div>
