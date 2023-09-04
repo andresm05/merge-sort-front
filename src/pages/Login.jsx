@@ -34,7 +34,7 @@ export const Login = () => {
         <div className="row border boder-2 border-white rounded g-0">
           <div className="col-sm-6 col-md-6 text-center">
             <img
-              src="../../public/estructura.jpg"
+              src="../estructura.jpg"
               alt="logo"
               className="img-fluid rounded"
             />

@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
-import { useAuthStore } from "../hooks/useAuthStore";
-import { useUser } from "../hooks/useUser";
+import { useAuthStore } from "../hooks/useAuthStore.js";
+import { useUser } from "../hooks/useUser.js";
 import ReactLoading from "react-loading";
 import Swal from "sweetalert2";
-import { Navbar } from "../components/Navbar";
-import { UserCard } from "../components/UserCard";
-import { SearchBar } from "../components/SearchBar";
+import { Navbar } from "../components/Navbar.jsx";
+import { UserCard } from "../components/UserCard.jsx";
+import { SearchBar } from "../components/SearchBar.jsx";
 
 export const Home = () => {
   const { users, getUsers, searchUsers, loading, error, hasUsers } = useUser();

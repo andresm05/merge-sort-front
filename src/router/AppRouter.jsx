@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { Home } from "../pages/home"
+import { Home } from "../pages/home.jsx"
 import { useAuthStore } from "../hooks/useAuthStore";
 import { useEffect } from "react";
 import { Login } from "../pages/Login";
