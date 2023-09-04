@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { Home } from "../pages/ Home.jsx"
+import { Home } from "../pages/Home.jsx";
 import { useAuthStore } from "../hooks/useAuthStore";
 import { useEffect } from "react";
-import { Login } from "../pages/Login";
+import { Login } from "../pages/Login.jsx";
 
 
 export const AppRouter = () => {
