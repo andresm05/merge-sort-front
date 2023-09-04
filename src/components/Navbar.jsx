@@ -4,7 +4,7 @@ export const Navbar = () => {
   const { user, startLogout } = useAuthStore();
 
   return (
-    <div className="navbar navbar-light navbar bg-light mb-4 px-4">
+    <div className="navbar navbar-light navbar bg-light mb-4 px-4 overflow-auto">
       <span className="navbar-brand">
         <img
           src={user.img}
