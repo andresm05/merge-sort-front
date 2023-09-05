@@ -37,7 +37,6 @@ export const useUser = () => {
       }
     } catch (error) {
       setError(error);
-      console.log(error);
       setTimeout(() => {
         setError(null);
       }, 10);
